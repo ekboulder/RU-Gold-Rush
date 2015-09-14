@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="goldRushApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta charset="utf-8">
+	<title>JS12: Gold Rush</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="goldRush.css">
+	<script type="text/javascript" src ="angular.js"></script>
+</head>
+<body ng-controller="mainController">
+
+	<div class="containerDiv">
+		<img ng-click="mapClick($event)" class="imageMap" src="images/topo-co.jpg">
+		
+		<div ng-repeat="location in positionArray">
+			
+			<div ng-mouseenter="showComment($index)" ng-mouseleave="showComment($index)" ng-click="removeMarker($index)" class="markerDiv" style="top:{{location.yposition}}px; left:{{location.xposition}}px">
+
+			<p>X</p>
+			<div ng-show="location.commentVisibility"> {{location.comments}} </div>
+			
+			</div>
+
+		</div>	
+	
+
+
+	</div>	
+
+	<script type="text/javascript" src="goldRush.js"></script>
+</body>
+</html>
+
+<!-- MASTER BRANCH!!! -->
